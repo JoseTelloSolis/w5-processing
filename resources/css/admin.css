@@ -1,0 +1,507 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+#app {
+    min-height: 100vh; 
+    display:flex; flex-direction:column;
+}
+
+.header h1 {
+    text-align: center;
+    color: #0d6efd;
+    line-height: 1;
+    font-size: 34px;
+    padding-top: 12px;
+    padding-bottom: 4px;
+}
+
+.header h1 span {
+    color: #e2001a;
+}
+
+.header .logo {
+    text-decoration: none;
+}
+
+.header .logo:hover {
+    text-decoration: none;
+}
+
+.footer {
+    background-color: #484848;
+    padding: 5px 10px;
+    z-index: 600;
+}
+
+.footer p {
+    font-family: arial;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.h-center {
+    display: flex;
+    justify-content: center;
+}
+
+.v-center {
+    display: flex;
+    align-items: center;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.content { 
+    flex:1;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.content h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.content p {
+    text-align: center;
+    color: #686868;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+}
+
+.form-content {
+    width: 100%;
+    max-width: 600px;
+    background-color: #d5d5d5;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    padding-left: 64px;
+    padding-right: 64px;
+    border-radius: 16px;
+    margin-top: 20px;
+    color: #686868;
+}
+
+.form-control {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+.password-input {
+    border-right: transparent;
+}
+
+.input-group-text.transparent {
+    background-color: #fff;
+}
+
+.input-group-text.transparent a {
+    color: #686868;
+}
+
+.input-group-text.transparent a:hover {
+    color: #0d6efd;
+}
+
+.btn-primary {
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    border: none;    
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 5px;
+}
+
+.btn-primary:disabled {
+    background-color: #bbb !important;
+}
+
+.form-check {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;    
+}
+
+.form-check label {
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.link-green {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    color: #1cbbb5;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.link-green:hover {
+    color: #18a49f;
+    text-decoration: underline;
+}
+
+.link-red {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    color: #c1001f;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.link-red span {
+    text-decoration: underline;
+}
+
+.link-red:hover {
+    color: #c1001f;
+    text-decoration: none;
+}
+
+.error-message {
+    margin-top: 4px;
+    font-size: 14px;
+    color: #dc3545;
+}
+
+.register-content {
+    width: 100%;
+    max-width: 1300px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    padding-left: 64px;
+    padding-right: 64px;
+    border-radius: 16px;
+    margin-top: 40px;
+    color: #686868;
+}
+
+.form-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    color: #686868;
+}
+
+.form-select {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #686868;
+}
+
+.column {
+    flex-flow: column;
+    justify-content: center;
+}
+
+.sidebar {
+    width: 100%;
+    max-width: 210px;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1000;
+    border-right: 1px solid #e8e8e8;
+	background-color: #304156;
+	color: #fff;
+	transition-duration: 0.5s;
+	overflow: hidden;
+}
+
+.sidebar .menu {
+	width: 210px;
+}
+
+.app.mobile .sidebar {
+	max-width: 70px;
+}
+
+.sidebar .content-logo {
+	height: 115px;
+}
+
+.sidebar .content-logo-mini {
+	height: 115px;
+	display: none;
+}
+
+.app.mobile .sidebar .content-logo-mini {
+	display: block;
+}
+
+.app.mobile .sidebar .content-logo {
+	display: none;
+}
+
+.app.mobile .sidebar .list-group-item span {
+	display: none;
+}
+
+.app.mobile .sidebar .list-group a {
+	max-width: 70px;
+}
+
+.sidebar .list-group .web {
+	display: flex;
+}
+
+.sidebar .list-group .mobile {
+	display: none;
+}
+
+.app.mobile .sidebar .list-group .web {
+	display: none;
+}
+
+.app.mobile .sidebar .list-group .mobile {
+	display: flex;
+}
+
+.sidebar .logo {
+	width: 100%;
+	max-width: 150px;
+}
+
+.sidebar .logo-mini {
+	width: 100%;
+	max-width: 40px;
+}
+
+.sidebar h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.sidebar .icon {
+    font-size: 45px;
+}
+
+.sidebar .list-group {
+    border-radius: 0;
+}
+
+.sidebar .list-group a {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+	text-decoration: none;
+	transition-duration: 0.5s;
+}
+
+.sidebar .list-group a:hover {
+	background-color: #263445!important;
+}
+
+.sidebar .list-group a .list-group-item {
+    border-right: 0;
+    padding: 0;
+	background-color: transparent;
+	color: #fff;
+}
+
+.sidebar .list-group a .list-group-item i {
+    margin-right: 15px;
+	font-size: 20px;
+}
+
+.main-content {
+	margin-left: 210px;
+    min-height: 100vh;
+	position: relative;
+	transition-duration: 0.5s;
+	background-color: #f0f2f5;
+}
+
+.app.mobile .main-content {
+	margin-left: 70px;
+}
+
+
+.header {
+	background: #fff;
+    -webkit-box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
+    box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
+    height: 50px;
+	display: flex;
+	align-items: center;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.header .hamburger {
+	padding: 0px 15px;
+}
+
+.header .hamburger a {
+	color: #666;
+	font-size: 22px;
+}
+
+.header .title h4 {
+	color: #97a8be;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+
+.header .options {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+}
+
+.header .options .profile-image {
+	width: 100%;
+	max-width: 40px;
+}
+
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+	border-color: transparent;
+}
+
+.header .options .maximize {
+	font-size: 26px;
+	margin-right: 30px;
+	align-items: center;
+    display: flex;
+	text-decoration: none;
+	color: #666;
+}
+
+.header .options .maximize:hover {
+	text-decoration: none;
+}
+
+.header .options p {
+	align-items: center;
+    display: flex;
+	margin-bottom: 0;
+}
+
+.header .dropdown-menu.custom-show {
+	position: absolute;
+    inset: 0px 0px auto auto;
+    margin: 0px;
+    transform: translate(0px, 56px);
+	display: block;
+}
+
+.main-content .div-content {
+	padding: 20px;
+	animation: 0.5s ease-out 0s 0.5 slideInFromLeft;
+}
+
+@keyframes slideInFromLeft {
+	0% {
+		opacity: 0;
+		transform: translate(-30px);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
+
+.card-body {
+	padding: 20px;
+}
+
+.card-title {
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+
+.align-right {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#preview {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+  
+#preview img {
+	max-width: 100%;
+	max-height: 200px;
+}
+
+.tooltip-button {
+	width: 100%;
+    max-width: 250px;
+}
+
+input[type="file"]{
+	display: none;
+}
+
+.div-imagen{
+	width: 100%;
+	max-width: 500px;
+	height: auto;
+	min-height: 200px;
+	border: 1px dashed rgb(169, 169, 169);
+	background-image: url(~@/assets_admin/img/mas.png);
+	background-repeat: no-repeat;
+	background-position: center center; 
+	cursor: pointer;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-self: center;
+  }
+  
+.div-imagen span{
+	color: #636161;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	position: absolute;
+	text-align: center;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	top: 70%;
+}
+  
+.preview-image{
+	margin: 0 auto;
+	width: 50%;
+	max-width: 600px;
+}
+
+textarea.form-control {
+	min-height: 72px;
+	resize: none;
+	overflow: hidden;
+}
+
+textarea:focus {
+	outline: none;
+}
+
+label.form-label span {
+	font-size: 16px;
+	font-style: italic;
+	opacity: 0.8;
+}
