@@ -26,7 +26,7 @@
                     <li><router-link class="dropdown-item" :to="{ name: 'profile' }"><i class="fa-solid fa-user"></i> Perfil</router-link></li>
                     <li><a class="dropdown-item" href="#" target="_blank"><i class="fa-brands fa-github"></i> Github</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                    <li><a class="dropdown-item" href="#" @click="logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -36,6 +36,7 @@
 <script>
     import { api as fullscreen } from 'vue-fullscreen'
     import { ref, reactive } from 'vue';
+    import { useRouter } from 'vue-router'
 
     export default {
         methods: {
@@ -52,6 +53,7 @@
         },
         emits: ['onMobile'],
         setup(props, { emit }) {
+            const router = useRouter()
 
             const data = reactive({
 				dropdown: false
@@ -74,13 +76,32 @@
                 }
             }
 
+            const logout = async() => {
+                await axios.post('/api/logout')
+                .then(response => {                        
+                        try {
+                            if (response.data.success === true) {
+                                localStorage.removeItem('token')
+                                router.push({ name: 'login' });
+                            }
+                            else {
+                                console.log(response.data.message)
+                            }
+                        }
+                        catch(error) {
+                            console.log(response.data.message)
+                        }
+                    })
+            }
+
             return {
                 mobile,
                 isMobile,
                 fullscreen: true,
                 teleport: true,
                 dropdown,
-                closeDropdown,
+                closeDropdown,                
+                logout,
                 data
             }
         }
