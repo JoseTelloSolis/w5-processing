@@ -450,17 +450,16 @@ body {
     max-width: 250px;
 }
 
-input[type="file"]{
+input[type="file"] {
 	display: none;
 }
 
-.div-imagen{
+.div-imagen {
 	width: 100%;
 	max-width: 500px;
 	height: auto;
 	min-height: 200px;
 	border: 1px dashed rgb(169, 169, 169);
-	background-image: url(~@/assets_admin/img/mas.png);
 	background-repeat: no-repeat;
 	background-position: center center; 
 	cursor: pointer;
@@ -468,9 +467,10 @@ input[type="file"]{
 	display: flex;
 	align-items: center;
 	justify-self: center;
-  }
+    background-color: lightgray;
+}
   
-.div-imagen span{
+.div-imagen span {
 	color: #636161;
 	font-family: inherit;
 	font-size: inherit;
@@ -484,7 +484,7 @@ input[type="file"]{
 	top: 70%;
 }
   
-.preview-image{
+.preview-image {
 	margin: 0 auto;
 	width: 50%;
 	max-width: 600px;
@@ -504,4 +504,8 @@ label.form-label span {
 	font-size: 16px;
 	font-style: italic;
 	opacity: 0.8;
+}
+
+.toast {
+    top: 20px;
 }
