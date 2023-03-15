@@ -508,4 +508,5 @@ label.form-label span {
 
 .toast {
     top: 20px;
+    z-index: 9000;
 }

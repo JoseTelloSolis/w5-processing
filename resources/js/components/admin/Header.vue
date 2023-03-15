@@ -24,7 +24,7 @@
 
                 <ul class="dropdown-menu" :class="{ 'custom-show': data.dropdown }">
                     <li><router-link class="dropdown-item" :to="{ name: 'profile' }"><i class="fa-solid fa-user"></i> Perfil</router-link></li>
-                    <li><a class="dropdown-item" href="#" target="_blank"><i class="fa-brands fa-github"></i> Github</a></li>
+                    <li><a class="dropdown-item" href="https://github.com/JoseTelloSolis/w5-processing" target="_blank"><i class="fa-brands fa-github"></i> Github</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="#" @click="logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
                 </ul>

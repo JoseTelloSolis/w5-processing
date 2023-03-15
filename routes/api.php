@@ -23,6 +23,8 @@ use App\Http\Controllers\ConfigurationController;
 Route::controller(AuthController::class)->group(function() {
     Route::post('/login', [AuthController::class, 'login']);
     Route::post('/logout', [AuthController::class, 'logout']);
+    Route::get('/getprofile', [AuthController::class, 'getProfile']);
+    Route::post('/updateprofile', [AuthController::class, 'updateProfile']);
 });
 
 Route::get('/getconfig', [ConfigurationController::class, 'getConfig']);

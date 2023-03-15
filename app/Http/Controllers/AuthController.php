@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -50,5 +52,48 @@ class AuthController extends Controller
         ];
 
         return response()->json($response, 200);
+    }
+
+    public function getProfile() {
+
+        if (!Auth::check()) {
+            return response()->json([
+                'message' => 'Sesión expirada'
+            ], 201); 
+        }
+
+        $id = Auth::user()->id;
+        $item = User::find($id);
+
+        return response()->json([
+            'item' => $item
+        ], 200);
+    }
+
+    public function updateProfile(Request $request) {
+
+        if (!Auth::check()) {
+            return response()->json([
+                'message' => 'Sesión expirada'
+            ], 201); 
+        }
+
+        $id = Auth::user()->id;
+        $item = User::find($id);
+        $item->name = $request->name;
+        $item->lastname = $request->lastname;
+        $item->email = $request->email;
+
+        if($request->hasFile('image')){
+            $request->image->move(public_path('img'), $request->image->getClientOriginalName());
+
+            $item->image = '/img/' . $request->image->getClientOriginalName();
+        }
+
+        $item->save();
+
+        return response()->json([
+            'message' => 'Datos actualizados'
+        ], 200);
     }
 }

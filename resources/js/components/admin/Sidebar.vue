@@ -38,13 +38,13 @@
                     </li>
                 </router-link>
 
-                <a href="#" target="_blank" class="web">
+                <a href="https://github.com/JoseTelloSolis/w5-processing" target="_blank" class="web">
                     <li class="list-group-item">
                         <i class="fa-brands fa-github"></i>
                         <span>Github</span>
                     </li>
                 </a>
-                <a href="#" target="_blank" class="mobile" data-bs-toggle="tooltip" data-bs-placement="right" title="Github">
+                <a href="https://github.com/JoseTelloSolis/w5-processing" target="_blank" class="mobile" data-bs-toggle="tooltip" data-bs-placement="right" title="Github">
                     <li class="list-group-item">
                         <i class="fa-brands fa-github"></i>
                         <span>Github</span>
