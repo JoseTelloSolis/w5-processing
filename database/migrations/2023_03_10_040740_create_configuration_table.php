@@ -22,7 +22,6 @@ return new class extends Migration
             $table->timestamps();
         });
         
-        // Insert default admin user
         DB::table('configuration')->insert(
             array(
                 'logo' => '/assets_admin/img/logo.png',

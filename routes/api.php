@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConfigurationController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,6 @@ Route::controller(AuthController::class)->group(function() {
 
 Route::get('/getconfig', [ConfigurationController::class, 'getConfig']);
 Route::post('/updateconfig', [ConfigurationController::class, 'updateConfig']);
+
+Route::get('/gethome', [HomeController::class, 'getHome']);
+Route::post('/updatehome', [HomeController::class, 'updateHome']);

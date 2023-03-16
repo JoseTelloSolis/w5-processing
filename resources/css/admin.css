@@ -491,7 +491,7 @@ input[type="file"] {
 }
 
 textarea.form-control {
-	min-height: 72px;
+	min-height: 84px;
 	resize: none;
 	overflow: hidden;
 }
@@ -509,4 +509,11 @@ label.form-label span {
 .toast {
     top: 20px;
     z-index: 9000;
+}
+
+.floating-submit {
+    width: 250px;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
 }

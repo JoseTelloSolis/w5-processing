@@ -14,12 +14,14 @@ import vClickOutside from "click-outside-vue3"
 
 import HeaderComponent from "./components/admin/Header.vue";
 import SidebarComponent from "./components/admin/Sidebar.vue";
-//import FooterComponent from "./components/Footer.vue";
+
+import CKEditor from '@ckeditor/ckeditor5-vue';
 
 const app = createApp(App);
 
 app.use(RouterWeb);
 app.use(vClickOutside)
+app.use( CKEditor )
 
 app.component('Header', HeaderComponent);
 app.component('Sidebar', SidebarComponent);
