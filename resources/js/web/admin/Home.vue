@@ -214,8 +214,7 @@
                 image2_section2Preview: '',
                 image3_section2Preview: '',
                 toastMessage: ''
-			})
-            
+			})            
 
             const editor = ClassicEditor
             const editorConfig = ref({
