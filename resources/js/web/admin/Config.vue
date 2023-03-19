@@ -33,6 +33,16 @@
                                     </div>
                                 </div>
 
+                                <div id="toastExpired" class="toast align-items-center position-fixed start-50 translate-middle-x text-bg-danger" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true">
+                                    <div class="toast-header">
+                                        <strong class="me-auto">Mensaje</strong>
+                                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                    </div>
+                                    <div id="toast-message" class="toast-body">
+                                        Sesión expirada. Redireccionando ...
+                                    </div>
+                                </div>
+
                                 <form @submit.prevent="updateData" enctype="multipart/form-data">
                                     <div class="mb-3">
                                         <label for="logo" class="form-label">Logo - tamaño recomendado 160 x 90 px</label>
@@ -78,9 +88,12 @@
 	import { ref, reactive } from 'vue';
     import { onMounted } from 'vue'
     import { Tooltip, Toast } from 'bootstrap'
+    import { useRouter } from 'vue-router'
 
     export default {
 		setup() {
+            const router = useRouter()
+
             const form = ref({
                 logo: '',
                 instagram: '',
@@ -111,6 +124,15 @@
 
             const getItem = async() => {
                 let response = await axios.get('/api/getconfig')
+
+                if (response.status == '201') {
+                    showToast('toastExpired')
+                    setTimeout(() => {
+                        router.push({ name: 'login' })
+                    }, 5000)
+                    return
+                }
+
                 form.value = response.data.item
                 data.logoPreview = form.value.logo
             }

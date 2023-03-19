@@ -118,8 +118,6 @@
             const getItem = async() => {
                 let response = await axios.get('/api/getprofile')
 
-                console.log(response)
-
                 if (response.status == '201') {
                     showToast('toastExpired')
                     setTimeout(() => {

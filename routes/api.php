@@ -33,3 +33,6 @@ Route::post('/updateconfig', [ConfigurationController::class, 'updateConfig']);
 
 Route::get('/gethome', [HomeController::class, 'getHome']);
 Route::post('/updatehome', [HomeController::class, 'updateHome']);
+
+Route::get('/getwebconfig', [ConfigurationController::class, 'getWebConfig']);
+Route::get('/getwebhome', [HomeController::class, 'getWebHome']);

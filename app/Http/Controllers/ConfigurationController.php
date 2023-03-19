@@ -5,10 +5,25 @@ namespace App\Http\Controllers;
 use App\Models\Configuration;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ConfigurationController extends Controller {
     
     public function getConfig() {
+        if (!Auth::check()) {
+            return response()->json([
+                'message' => 'Sesión expirada'
+            ], 201); 
+        }
+
+        $item = Configuration::find(1);
+
+        return response()->json([
+            'item' => $item
+        ], 200);
+    }
+
+    public function getWebConfig() {
         $item = Configuration::find(1);
 
         return response()->json([

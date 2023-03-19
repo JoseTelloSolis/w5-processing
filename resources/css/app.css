@@ -1,0 +1,446 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #5A5C5A;
+}
+
+.logo {
+    width: 100%;
+    max-width: 150px;
+}
+
+.circle-link {
+    background-color: #5A5C5A;
+    color: #fff;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.5s;
+}
+
+.circle-link:hover {
+    color: #fff;
+    background-color: #00AA97;
+}
+
+.landing {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.landing:before {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 400;
+    background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+.landing .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 500;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.landing h1 {
+    color: #0060B1;
+    text-transform: uppercase;
+    font-family: 'barton';
+    font-size: 38px;
+}
+
+.full {
+    width: 100%;    
+}
+
+.div-content {
+    margin-top: 60px;
+}
+
+.div-sidebar {
+    position: relative;
+}
+
+.sidebar-mobile {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar-mobile .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    text-decoration: none;
+    color: #5A5C5A;
+  }
+
+.sidebar {
+    position: fixed;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    top: 50px;
+}
+
+.sidebar.show {
+    opacity: 1;
+}
+
+.sidebar .logo-sidebar, .sidebar-mobile .logo-sidebar {
+    width: 100%;
+    max-width: 160px;
+}
+
+.sidebar-mobile .logo-sidebar-mobile {
+    max-width: 120px;
+}
+
+.sidebar ul, .sidebar-mobile ul {
+    margin-top: 60px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar ul li, .sidebar-mobile ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a, .sidebar-mobile ul li a {
+    color: #5A5C5A;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'barton';
+    font-size: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.sidebar ul li a:before, .sidebar-mobile ul li a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #5A5C5A;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar ul li a:hover:before, .sidebar-mobile ul li a:hover:before {
+    visibility: visible;
+    width: 100%;
+}
+
+.content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.content h2 {
+    text-transform: uppercase;
+    font-family: 'barton';
+    font-size: 40px;
+    color: #5A5C5A;
+    margin-bottom: 40px;    
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    margin-left: -20px;
+    border-left: 5px solid #00AA97;
+    /*transition: all 0.5s ease-in-out;*/
+    position: relative;
+}
+
+/*.content h2.show {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeInBottom;
+}*/
+
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to { opacity: 1 }
+}
+
+.content h2:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    background-color: #00AA97;
+    visibility: hidden;
+    transition: all 1.5s ease-in-out;
+}
+
+.content h2.show:before {
+    visibility: visible;
+    width: 100%;
+}
+
+.content h3 {
+    text-transform: uppercase;
+    font-family: 'barton';
+    font-size: 30px;
+    color: #5A5C5A;
+    margin-top: 60px;
+    margin-bottom: 40px;    
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    margin-left: -20px;
+    /*transition: all 0.5s ease-in-out;*/
+    position: relative;
+}
+
+/*.content h3.show {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeInBottom;
+}*/
+
+.content h3:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #5A5C5A;
+    visibility: hidden;
+    transition: all 1.5s ease-in-out;
+}
+
+.content h3.show:before {
+    visibility: visible;
+    width: 100%;
+}
+
+.content p {
+    text-align: justify;
+    color: #5A5C5A;
+    font-family: 'seguiemj';
+    font-size: 18px;
+}
+
+.content ul li {
+    text-align: justify;
+    color: #5A5C5A;
+    font-family: 'seguiemj';
+    font-size: 18px;
+}
+
+.div-section1 .image {
+    overflow:hidden;
+    position:relative;
+    display:inline-block;
+    margin-top: 60px;
+}
+
+.div-section1 .image:after {
+    content:" ";
+    position:absolute;
+    display:block;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#fff;
+    z-index:2;
+    transition: all 4s ease;
+}
+
+.div-section1 .image.show:after {
+    left:100%
+}
+
+.div-section2 {
+    margin-top: 100px;
+}
+
+.div-section2 .row {
+    margin-bottom: 80px;
+}
+
+.vertical-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.vertical-items a {
+    color: #5A5C5A;
+    font-family: 'acumin';
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition-duration: 0.5s;
+    margin-bottom: 10px;
+    position: relative;
+    width: min-content;
+}
+
+.vertical-items a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #5A5C5A;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.vertical-items a:hover:before {
+    visibility: visible;
+    width: 100%;
+}
+
+.horizontal-items {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+
+.horizontal-items a {
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+/* [1] The container */
+.img-hover-zoom {
+    height: 300px; /* [1.1] Set it as per your need */
+    overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom img {
+    transition: transform .5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom:hover img {
+    transform: scale(1.2);
+}
+
+.img-hover-zoom--quick-zoom img {
+    transform-origin: 0 0;
+    transition: transform .25s, visibility .25s ease-in;
+}
+
+/* The Transformation */
+.img-hover-zoom--quick-zoom:hover img {
+    transform: scale(2);
+}
+
+.div-menu {
+    background-color: #fff;
+}
+
+@media only screen and (max-width: 990px) {
+    .div-menu {
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        max-width: 100%;        
+    }
+
+    .landing {
+        margin-top: 95px;
+    }
+
+    .logo {
+        max-width: 120px;
+    }
+
+    .landing h1 {
+        font-size: 26px;
+    }
+
+    .content h2 {
+        margin-left: 0;
+    }
+
+    .content h3 {
+        margin-left: 0;
+        font-size: 28px;
+    }
+}
+
+@media only screen and (min-width: 991px) {
+    .navbar {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+        background: transparent;
+        color: #5A5C5A;
+        transition-duration: 0.5s;
+    }
+
+    .navbar .navbar-nav.nav-pills .nav-link {
+        color: #5A5C5A;
+        transition-duration: 0.5s;
+        text-transform: uppercase;
+        font-family: 'barton';
+        font-size: 18px;
+    }
+
+    .nav-pills .nav-link.active:hover, .nav-pills .show>.nav-link:hover {
+        background: #00AA97;
+        color: #fff;
+    }
+
+    .navbar .navbar-nav.nav-pills .nav-link:hover {
+        background: #00AA97;
+        color: #fff;
+    }
+    
+    .nav-pills .nav-link {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-radius: 0;
+        padding: 34px !important;
+    }
+
+    .sm-icons .nav-item {
+        margin-left: 20px;
+    }
+}

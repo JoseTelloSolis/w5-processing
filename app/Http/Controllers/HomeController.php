@@ -23,6 +23,14 @@ class HomeController extends Controller {
         ], 200);
     }
 
+    public function getWebHome() {
+        $item = Home::find(1);
+
+        return response()->json([
+            'item' => $item
+        ], 200);
+    }
+
     public function updateHome(Request $request) {
         /*if (!Auth::check()) {
             return response()->json([
