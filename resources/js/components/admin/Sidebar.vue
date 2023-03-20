@@ -63,7 +63,13 @@
 
     export default {
         setup() {
-            onMounted(() => {                
+            onMounted(() => {  
+                const tooltips = document.querySelectorAll('.tooltip');
+
+                tooltips.forEach(item => {
+                    item.remove();
+                });
+
                 new Tooltip(document.body, {
                     selector: "[data-bs-toggle='tooltip']",
                 })
