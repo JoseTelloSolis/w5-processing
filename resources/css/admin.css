@@ -76,15 +76,61 @@ body {
 
 .form-content {
     width: 100%;
-    max-width: 600px;
-    background-color: #d5d5d5;
+    max-width: 1000px;
+    background-color: transparent;
     padding-top: 48px;
     padding-bottom: 48px;
     padding-left: 64px;
     padding-right: 64px;
-    border-radius: 16px;
     margin-top: 20px;
     color: #686868;
+    -webkit-box-shadow: 0 1px 4px rgb(0 21 41 / 50%);
+    box-shadow: 0 1px 4px rgb(0 21 41 / 50%);
+}
+
+.form-content form {
+    width: 100%;
+}
+
+.form-content .v-center {
+    height: 100%;
+}
+
+.form-content .logo {
+    width: 100%;
+}
+
+.form-content h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-content .col-md-6 {
+    padding-right: 40px;
+}
+
+.form-content .col-md-6:last-child {
+    padding-left: 40px;
+    padding-right: 0;
+}
+
+.login-v-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-login {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+        to right, 
+        rgba(11, 94, 215, 0.9) 0%, 
+        rgba(11, 94, 215, 0.9) 50%, 
+        #fff 50%, 
+        #fff 100%
+    );
 }
 
 .form-control {
@@ -108,6 +154,10 @@ body {
     color: #0d6efd;
 }
 
+.form-content .btn-primary {
+    max-width: 100%;
+}
+
 .btn-primary {
     text-transform: uppercase;
     width: 100%;
@@ -118,6 +168,7 @@ body {
     font-size: 16px;
     font-weight: 700;
     padding: 10px 5px;
+    background-color: rgba(11, 94, 215, 0.9);
 }
 
 .btn-primary:disabled {
@@ -516,4 +567,28 @@ label.form-label span {
     position: fixed;
     right: 40px;
     bottom: 40px;
+}
+
+@media only screen and (max-width: 767px) {
+    .content-login {
+        background: #fff;
+    }
+
+    .form-content .v-center {
+        justify-content: center;
+    }
+
+    .form-content .v-center img {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .form-content .col-md-6 {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .form-content .col-md-6:last-child {
+        padding-left: 0;
+    }
 }

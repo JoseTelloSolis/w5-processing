@@ -31,7 +31,7 @@
                         <span>Portada</span>
                     </li>
                 </router-link> 
-                <router-link :to="{ name: 'config' }" class="mobile" data-bs-toggle="tooltip" data-bs-placement="right" title="Portada">
+                <router-link :to="{ name: 'home' }" class="mobile" data-bs-toggle="tooltip" data-bs-placement="right" title="Portada">
                     <li class="list-group-item">
                         <i class="fa-solid fa-home"></i>
                         <span>Portada</span>
@@ -63,7 +63,7 @@
 
     export default {
         setup() {
-            onMounted(() => {
+            onMounted(() => {                
                 new Tooltip(document.body, {
                     selector: "[data-bs-toggle='tooltip']",
                 })
