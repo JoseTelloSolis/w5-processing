@@ -1,7 +1,7 @@
 # W5 Processing
 
 Landing page con panel de edición.
-Desarrollado en Laravel 
+Desarrollado en Laravel 9, Vue 3, Vite, Bootstrap 5
 
 ## Demo
 
