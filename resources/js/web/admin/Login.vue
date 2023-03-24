@@ -6,14 +6,14 @@
                 <div class="row">
 
                     <div class="d-none d-sm-none d-md-block col-md-6">
-                        <div class="v-center">
-                            <img src="/assets_admin/img/logo.png" class="logo">
+                        <div class="v-center">                            
+                            <img :src="`./assets_admin/img/logo.png`" class="logo">
                         </div>
                     </div>
 
                     <div class="d-sm-block d-md-none col-md-6">
                         <div class="v-center">
-                            <img src="/assets_admin/img/logo_mobile.png" class="logo">
+                            <img :src="`./assets_admin/img/logo_mobile.png`" class="logo">
                         </div>
                     </div>
                     
