@@ -22,10 +22,6 @@ Route::get('/admin', function () {
     return view('admin/index');
 });
 
-Route::get('/admin/', function () {
-    return view('admin/index');
-});
-
 Route::get('/admin/{any}', function () {
     return view('admin/index');
 });

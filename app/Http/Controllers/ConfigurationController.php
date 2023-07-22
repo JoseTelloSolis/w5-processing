@@ -6,14 +6,15 @@ use App\Models\Configuration;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class ConfigurationController extends Controller {
-    
+
     public function getConfig() {
-        if (!Auth::check()) {
+        if(!Session::get('username')) {
             return response()->json([
                 'message' => 'Sesión expirada'
-            ], 201); 
+            ], 201);
         }
 
         $item = Configuration::find(1);

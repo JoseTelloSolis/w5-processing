@@ -6,14 +6,15 @@ use App\Models\Home;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller {
 
     public function getHome() {
-        if (!Auth::check()) {
+        if(!Session::get('username')) {
             return response()->json([
                 'message' => 'Sesión expirada'
-            ], 201); 
+            ], 201);
         }
 
         $item = Home::find(1);
@@ -32,14 +33,14 @@ class HomeController extends Controller {
     }
 
     public function updateHome(Request $request) {
-        /*if (!Auth::check()) {
+        if(!Session::get('username')) {
             return response()->json([
                 'message' => 'Sesión expirada'
-            ], 201); 
-        }*/
+            ], 201);
+        }
 
         $item = Home::find(1);
-        
+
         $item->title = $request->title;
         $item->title_section1 = $request->title_section1;
         $item->text_section1 = $request->text_section1;
@@ -48,13 +49,13 @@ class HomeController extends Controller {
         $item->text_section2 = $request->text_section2;
         $item->subtitle1_section2 = $request->subtitle1_section2;
         $item->text1_section2 = $request->text1_section2;
-        
+
         $item->subtitle2_section2 = $request->subtitle2_section2;
         $item->text2_section2 = $request->text2_section2;
-        
+
         $item->subtitle3_section2 = $request->subtitle3_section2;
         $item->text3_section2 = $request->text3_section2;
-        
+
         $item->title_section3 = $request->title_section3;
 
         if($request->hasFile('image')){

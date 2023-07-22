@@ -9,7 +9,7 @@ const ConfigComponent = () => import ('../web/admin/Config.vue');
 
 const routes = [
     { path:'/', name:'index', component:IndexComponent },
-    { path:'/admin/', name:'login', component:LoginComponent },
+    { path:'/admin', name:'login', component:LoginComponent },
     { path:'/admin/inicio/', name:'admin', component:AdminIndexComponent },
     { path:'/admin/profile/', name:'profile', component:ProfileComponent },
     { path:'/admin/home/', name:'home', component:HomeComponent },

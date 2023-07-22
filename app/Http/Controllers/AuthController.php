@@ -16,10 +16,10 @@ class AuthController extends Controller
             //$user = Auth::user();
             $user = $request->user();
 
-            
-
             $success['token'] = $user->createToken('MyApp')->plainTextToken;
             $success['username'] = $user->username;
+
+            Session::put('username', $user->username);
 
             $response = [
                 'success' => true,
@@ -42,6 +42,7 @@ class AuthController extends Controller
             Auth::logout();
             $success = true;
             $message = 'Sesión finalizada';
+            Session::forget('username');
         }
         catch(\Illuminate\Database\QueryException $ex) {
             $success = false;
@@ -58,10 +59,10 @@ class AuthController extends Controller
 
     public function getProfile() {
 
-        if (!Auth::check()) {
+        if(!Session::get('username')) {
             return response()->json([
                 'message' => 'Sesión expirada'
-            ], 201); 
+            ], 201);
         }
 
         $id = Auth::user()->id;
@@ -74,10 +75,10 @@ class AuthController extends Controller
 
     public function updateProfile(Request $request) {
 
-        if (!Auth::check()) {
+        if(!Session::get('username')) {
             return response()->json([
                 'message' => 'Sesión expirada'
-            ], 201); 
+            ], 201);
         }
 
         $id = Auth::user()->id;
