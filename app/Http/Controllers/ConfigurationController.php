@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Session;
 class ConfigurationController extends Controller {
 
     public function getConfig() {
-        if(!Session::get('username')) {
+        if(!isset($_SESSION['username'])) {
             return response()->json([
                 'message' => 'Sesión expirada'
             ], 201);
