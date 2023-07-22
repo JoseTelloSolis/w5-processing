@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Session;
 class HomeController extends Controller {
 
     public function getHome() {
-        if(!isset($_SESSION['username'])) {
+        if(!Session::get('username')) {
             return response()->json([
                 'message' => 'Sesión expirada'
             ], 201);
@@ -33,7 +33,7 @@ class HomeController extends Controller {
     }
 
     public function updateHome(Request $request) {
-        if(!isset($_SESSION['username'])) {
+        if(!Session::get('username')) {
             return response()->json([
                 'message' => 'Sesión expirada'
             ], 201);
